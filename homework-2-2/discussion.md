@@ -1,0 +1,2 @@
+# Discussion of Potential
+It looks like temperature has very little effect on what happens to the B2V constant regardless of what type of potential was used. All the lines appeared to be mostly constant.
