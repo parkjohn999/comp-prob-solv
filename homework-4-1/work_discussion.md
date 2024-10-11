@@ -1,0 +1,1 @@
+As volume increases, Isothermal Work increases faster than adiabatic work which makes sense from the equations given Isothermal work is generally following PV = constant while adiabatic work is following PV^y = constant where y is greater than 1

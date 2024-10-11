@@ -23,9 +23,10 @@ df['Isothermal Work'] = isothermals
 df.to_csv('volumeAndWork.csv', index=False)
 
 # Plotting
-plt.plot(x,adiabatics)
-plt.plot(x,isothermals)
-plt.xlabel("Volume (m^3)")
+plt.plot(x,adiabatics,label="Adiabatic Work")
+plt.plot(x,isothermals,label="Isothermal Work")
+plt.xlabel("Final Volume (m^3)")
 plt.ylabel("Work (J)")
+plt.legend(loc="upper left")
 plt.title("Isothermal & Adiabatic Work")
 plt.show()
