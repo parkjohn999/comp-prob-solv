@@ -102,3 +102,21 @@ def attempt_move(lattice, N_A, N_B, N_empty, neighbor_indicies, params):
                 N_B -= 1
             N_empty += 1
     return (N_A, N_B, N_empty)
+
+def run_simulation(size, n_steps, params):
+    lattice = initialize_lattice(size)
+    neighbor_indices = compute_neighbor_indices(size)
+    N_sites = size * size
+    N_A = 0
+    N_B = 0
+    N_empty = N_sites
+    
+    coverage_A = np.zeros(n_steps)
+    coverage_B = np.zeros(n_steps)
+
+    for step in range(n_steps - 1):
+        N_A, N_B, N_empty = attempt_move(lattice, N_A, N_B, N_empty, neighbor_indices, params)
+        coverage_A[step] = N_A / N_sites
+        coverage_B[step] = N_B / N_sites
+    
+    return (lattice, coverage_A, coverage_B)
