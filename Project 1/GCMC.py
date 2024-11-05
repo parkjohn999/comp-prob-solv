@@ -114,9 +114,25 @@ def run_simulation(size, n_steps, params):
     coverage_A = np.zeros(n_steps)
     coverage_B = np.zeros(n_steps)
 
-    for step in range(n_steps - 1):
+    for step in range(n_steps):
         N_A, N_B, N_empty = attempt_move(lattice, N_A, N_B, N_empty, neighbor_indices, params)
         coverage_A[step] = N_A / N_sites
         coverage_B[step] = N_B / N_sites
     
     return (lattice, coverage_A, coverage_B)
+
+def plot_lattice(lattice, ax, title):
+    size = len(lattice)
+    for x in range(size):
+        for y in range(0,size):
+            if lattice[x,y] == 1:
+                ax.plot(x + 0.5, y + 0.5, c="red")
+            elif lattice[x,y] == 2:
+                ax.plot(x + 0.5, y + 0.5, c="blue")
+    ax.set_xlim([0,size])
+    ax.set_ylim([0,size])
+    ax.xticks([])
+    ax.yticks([])
+    ax.minorticks_on()
+    ax.title(title)
+    return ax
