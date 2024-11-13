@@ -13,9 +13,9 @@ for mu_A in mus_A:
         params.append({
             'epsilon_A': -0.1,
             'epsilon_B': -0.1,
-            'epsilon_AA': 0,
-            'epsilon_BB': 0,
-            'epsilon_AB': 0,
+            'epsilon_AA': -0.05,
+            'epsilon_BB': -0.05,
+            'epsilon_AB': 0.05,
             'mu_A': mu_A,
             'mu_B': -0.1,
             'T': T  # Temperature (in units of k)
